@@ -1,0 +1,76 @@
+package com.alcancia;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.Mockito.when;
+
+import java.util.Arrays;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.alcancia.entity.Alcancia;
+import com.alcancia.entity.TipoMoneda;
+import com.alcancia.repository.IAlcanciaRepository;
+import com.alcancia.service.AlcanciaService;
+
+@SpringBootTest
+class AlcanciaServiceTest {
+	
+	@Mock
+	private IAlcanciaRepository repository;
+	
+	@InjectMocks
+	private AlcanciaService service;
+	
+	
+	private Alcancia alcancia;
+	
+	private TipoMoneda tipoMoneda;
+	
+	@BeforeEach
+	void setUp() {
+		MockitoAnnotations.initMocks(this);
+		tipoMoneda = new TipoMoneda();
+		tipoMoneda.setId((long) 7);
+		tipoMoneda.setNombre(500);
+		
+		alcancia = new Alcancia();
+		alcancia.setId((long) 1);
+		alcancia.setTipoMoneda(tipoMoneda);
+		
+	}
+
+	@Test
+	void findAllTest() {
+		when(repository.findAll()).thenReturn(Arrays.asList(alcancia));
+		assertNotNull(service.findAll());
+	}
+	
+	@Test
+	void saveTest() {
+		when(repository.save(alcancia)).thenReturn(alcancia);
+		assertNotNull(service.save(alcancia));
+	}
+	
+	@Test
+	void findAlcanciaByTipoMonedaByIdByGroupByNombreTest() {
+		Long id = (long) 7;
+		when(repository.findAlcanciaByTipoMonedaByIdByGroupByNombre(id)).thenReturn(alcancia);
+		assertNotNull(service.save(alcancia));
+	}
+	
+	@Test
+	void findAlcanciaByTipoMonedaValorByIdByGroupByNombreTest() {
+		Long id = (long) 7;
+		when(repository.findAlcanciaByTipoMonedaValorByIdByGroupByNombre(id)).thenReturn(alcancia);
+		assertNotNull(service.save(alcancia));
+	}
+	
+	
+
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AlcanciaServiceTest" project="alcancia" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.alcancia.AlcanciaServiceTest" time="0.001" displayname="AlcanciaServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]">
+    <testcase name="saveTest" classname="com.alcancia.AlcanciaServiceTest" time="0.001" displayname="saveTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:saveTest()]"/>
+    <testcase name="findAlcanciaByMonedasTest" classname="com.alcancia.AlcanciaServiceTest" time="0.0" displayname="findAlcanciaByMonedasTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:findAlcanciaByMonedasTest()]"/>
+    <testcase name="findAlcanciaByTipoMonedaValorByIdByGroupByNombreTest" classname="com.alcancia.AlcanciaServiceTest" time="0.0" displayname="findAlcanciaByTipoMonedaValorByIdByGroupByNombreTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:findAlcanciaByTipoMonedaValorByIdByGroupByNombreTest()]"/>
+    <testcase name="findAllTest" classname="com.alcancia.AlcanciaServiceTest" time="0.0" displayname="findAllTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:findAllTest()]"/>
+    <testcase name="findAlcanciaByTipoMonedaByIdByGroupByNombreTest" classname="com.alcancia.AlcanciaServiceTest" time="0.0" displayname="findAlcanciaByTipoMonedaByIdByGroupByNombreTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:findAlcanciaByTipoMonedaByIdByGroupByNombreTest()]"/>
+  </testsuite>
+</testrun>

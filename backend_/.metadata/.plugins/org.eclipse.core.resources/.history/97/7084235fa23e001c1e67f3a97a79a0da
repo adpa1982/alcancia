@@ -1,0 +1,49 @@
+package com.alcancia;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.alcancia.entity.Alcancia;
+import com.alcancia.entity.TipoMoneda;
+import com.alcancia.repository.IAlcanciaRepository;
+import com.alcancia.service.AlcanciaService;
+
+@SpringBootTest
+class AlcanciaServiceTest {
+	
+	@Mock
+	private IAlcanciaRepository repository;
+	
+	@InjectMocks
+	private AlcanciaService service;
+	
+	
+	private Alcancia alcancia;
+	
+	private TipoMoneda tipoMoneda;
+	
+	@BeforeEach
+	void setUp() {
+		MockitoAnnotations.initMocks(this);
+		tipoMoneda = new TipoMoneda();
+		tipoMoneda.setId((long) 7);
+		tipoMoneda.setNombre(500);
+		
+		alcancia = new Alcancia();
+		alcancia.setId((long) 1);
+		alcancia.setTipoMoneda(tipoMoneda);
+		
+	}
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

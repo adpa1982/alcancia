@@ -1,0 +1,7 @@
+package com.alcancia.service;
+
+@Service
+@Transactional
+public class ProductoService implements IProductoService {
+
+}

@@ -1,0 +1,7 @@
+package com.alcancia.service;
+
+import com.alcancia.entity.Alcancia;
+
+public interface IAlcanciaService extends BaseService<Alcancia> {
+
+}

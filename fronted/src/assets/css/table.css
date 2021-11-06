@@ -1,0 +1,179 @@
+ng2-smart-table table{
+  border-color: initial;
+  border-image: initial;
+  border-width: 2px;
+  text-align: center;
+
+  display: table;
+  border-spacing: 2px;
+  border-color: #edf1f7;
+
+  border-collapse: collapse;
+
+  font-size: 16px;
+}
+
+ng2-smart-table table tbody tr:nth-of-type(2n){
+  background-color:#f7f9fc;
+}
+
+
+ng2-smart-table .ng2-smart-actions {
+  max-width: 100px;
+}
+
+/* grid lines */
+ng2-smart-table table > tbody > tr > td {
+  box-sizing: border-box;
+  border: 1px solid #edf1f7;
+  font-weight: 400;
+}
+
+ng2-smart-table table > tbody > tr:hover {
+  background-color:#edf1f7;
+}
+
+/* headers grid color*/
+ng2-smart-table table thead > tr > th  {
+  border: 1px solid #edf1f7;
+  background-color: #FFFFFF;
+}
+
+ng2-smart-table table thead tr.ng2-smart-titles th.ng2-smart-th .ng2-smart-title .ng2-smart-sort  {
+  font-weight: bold !important;
+  color: #007bff;
+}
+
+ng2-smart-table table thead tr.ng2-smart-titles .ng2-smart-title {
+  font-weight: bold !important;
+  color: #007bff;
+  font-size: 16px;
+}
+
+ng2-smart-table table tbody a {
+  color: #222b45;
+  margin-left: 10px;
+  text-decoration: none !important;
+}
+
+ng2-smart-table table tbody tr td a i {
+  font-size: 32px;
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+  display: inline-block;
+  font-size: 32px;
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i {
+  font-size: 28px;
+}
+
+ng2-smart-table .ng2-smart-action-delete-delete {
+  color: #222b45;
+  font-size: 32px;
+}
+
+ng2-st-tbody-edit-delete a.ng2-smart-action.ng2-smart-action-delete-delete {
+  color: #ff779b;
+}
+
+ng2-st-tbody-edit-delete a.ng2-smart-action.ng2-smart-action-delete-delete:hover {
+  color: #ff3d71;
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ieye {
+  color: #4ca2ff;
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ieye:hover {
+  color: #007bff;
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ipencil {
+  color:#4ce2b0;
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ipencil:hover {
+  color:#00d68f;
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ifile {
+  color:#ffbc34; /* 7460ee */
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ifile:hover {
+  color:#f8a600;
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.itrash {
+  color: #ff779b;
+}
+
+ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.itrash:hover {
+  color: #ff3d71;
+}
+
+
+@media (min-width: 785px) and (max-width: 822px) {
+  ng2-smart-table table > tbody > tr > td {
+    padding: 0.5em 0.5em;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 857px) {
+
+  ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+    display: inline-block;
+  }
+  ng2-smart-table .ng2-smart-actions {
+    max-width: 100%;
+  }
+}
+@media (min-width: 858px) and (max-width: 910px) {
+  ng2-smart-table .ng2-smart-actions {
+    max-width: 100%;
+  }
+}
+@media (min-width: 911px) and (max-width: 1378px) {
+  ng2-smart-table .ng2-smart-actions {
+    max-width: 100%;
+  }
+  ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1362px) {
+  ng2-smart-table .ng2-smart-actions {
+    max-width: 100%;
+  }
+  ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i {
+    font-size: 28px;
+  }
+}
+
+/* Paginador */
+ng2-smart-table ng2-smart-table-pager nav {
+  margin: 0 auto;
+  padding-top: 20px;
+  text-decoration: none !important;
+  font-weight: 400;
+}
+
+ng2-smart-table ng2-smart-table-pager nav ul li a {
+  text-decoration: none !important;
+  color:#007bff;
+}
+
+ng2-smart-table ng2-smart-table-pager nav ul li.ng2-smart-page-item.page-item.disabled .page-link {
+	color: #dfe3ea !important;
+  border-color: #edf1f7;
+  background-color: #fff;
+}
+
+ng2-smart-table ng2-smart-table-pager nav ul li.ng2-smart-page-item.page-item .page-link {
+	padding: 12px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 4px !important;
+}

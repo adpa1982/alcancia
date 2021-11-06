@@ -1,0 +1,108 @@
+{
+  "title": "App",
+  "global": {
+    "btn": {
+      "cancel": "Cancelar",
+      "edit"  : "Editar",
+      "delete": "Eliminar",
+      "save"  : "Guardar",
+      "update": "Actualizar",
+      "search": "Buscar"
+    },
+    "title": {
+      "nameModule": "Modulo de {{ module }}"
+    },
+    "valid": {
+      "dateMinTodayError"        : "La fecha no puede ser menor a la fecha actual.",
+      "dateMaxError"             : "La fecha inicial no puede ser mayor a la fecha final.",
+      "dateMinError"             : "La fecha final no puede ser menor a la fecha inicial.",
+      "emailRegisteredError"     : "El email ya fues registrado anteriormente.",
+      "fileTypeError"            : "El tipo de archivo no es soportado, por favor cargue un archivo .{{ type }}.",
+      "fileSizeError"            : "El tamaño del archivo no puede superar los {{ kb }} kb ",
+      "lengthMinError"           : "El campo no puede contener menos de {{ min }} caracteres.",
+      "lengthMaxError"           : "El campo no puede contener más de {{ max }} caracteres.",
+      "notDataAvailable"         : "No se encontraron registros de {{ modulo }} en el sistema.",
+      "onCancel"                 : "Canceló la eliminación de la información {{ msg }}.",
+      "onCreate"                 : "Se guardo la información {{ module }} correctamente.",
+      "onDelete"                 : "¿Realmente desea eliminar la información {{ msg }} del sistema?.",
+      "onModified"               : "Se actualizó la información {{ module }} correctamente.",
+      "onNotFound"               : "No se encontro {{ module }} a eliminar.",
+      "onNotModified"            : "No se realizó ningún cambio en la información {{ msg }}.",
+      "onSuccesDelete"           : "{{ module }} eliminado con exito.",
+      "regexAlphaNumberWordError": "Formato alfanúmerico inválido.",
+      "regexAnyWordError"        : "Formato inválido.",
+      "regexCharWordError"       : "Formato de caracteres inválido, solo se aceptan letras.",
+      "regexDateError"           : "Formato de fecha inválido.",
+      "regexDefaultError"        : "Formato inválido, no use caracteres especiales.",
+      "regexEmailError"          : "Formato de e-mail inválido.",
+      "regexNameError"           : "Formato inválido, no use caracteres especiales.",
+      "regexNameLastNameError"   : "Debe de ser en formato de nombre y apellido.",
+      "regexNumberError"         : "Formato de número inválido.",
+      "regexPasswordError"       : "La contraseña debe incluir una longitud mínima de 8 caracteres, una letra mayúscula, una letra minúscula, un número, un carácter especial (@#$%^&+=/.) y no debe tener espacios.",
+      "regexPercentError"        : "Formato de porcentaje inválido, use el punto decimal (.).",
+      "regexWordError"           : "Formato inválido, no use caracteres especiales ni espacios.",
+      "required"                 : "Campo requerido.",
+      "validateForm"             : "Debe ingresar todos los datos para enviar la petición."
+    }
+  },
+  "mod": {
+    "ejemplo": {
+      "title": {
+        "create": "Crear Ejemplo",
+        "edit"  : "Editar Ejemplo",
+        "list"  : "Listar Ejemplos",
+        "view"  : "Ver Ejemplo"
+      },
+      "subtitle": {
+        "create": "Formulario para crear ejemplo",
+        "edit"  : "Formulario para editar ejemplo",
+        "list"  : "Tabla para mostrar la información de Ejemplos",
+        "view"  : "Muestra la información del ejemplo"
+      },
+      "label": {
+        "id"       : "Id",
+        "code"     : "Código",
+        "name"     : "Nombre",
+        "createdAt": "Creado"
+      }
+    },
+    "tipomoneda": {
+      "title": {
+        "create": "Crear Tipo de moneda",
+        "edit"  : "Editar Tipo de moneda",
+        "list"  : "Listar Tipo de moneda",
+        "view"  : "Ver Tipo de moneda"
+      },
+      "subtitle": {
+        "create": "Formulario para crear Tipo de moneda",
+        "edit"  : "Formulario para editar Tipo de moneda",
+        "list"  : "Tabla para mostrar la información de Tipo de moneda",
+        "view"  : "Muestra la información del Tipo de moneda"
+      },
+      "label": {
+        "id"       : "Id",
+        "nombre"   : "Nombre",
+        "createdAt": "Creado"
+      }
+    },
+    "alcancia": {
+      "title": {
+        "create": "Agregar moneda a la alcancía",
+        "edit"  : "Ver cantidad, valor por denominación en la alcancía",
+        "list"  : "Listar ahorro de la alcacía",
+        "view"  : "Ver totales de la alcancía"
+      },
+      "subtitle": {
+        "create": "Formulario para agregar moneda a la alcancía",
+        "edit"  : "Formulario para ver cantidad, valor por denominación de la alcancía",
+        "list"  : "Tabla para mostrar la información del ahorro en la alcancía",
+        "view"  : "Formulario para ver totales de la alcancía"
+      },
+      "label": {
+        "id"          : "Id",
+        "idTipomoneda": "Denominación",
+        "createdAt"   : "Creado"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AlcanciaControllerTest" project="alcancia" tests="11" started="11" failures="0" errors="0" ignored="0">
+  <testsuite name="com.alcancia.AlcanciaControllerTest" time="1.652" displayname="AlcanciaControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]">
+    <testcase name="saveTest" classname="com.alcancia.AlcanciaControllerTest" time="1.576" displayname="saveTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:saveTest()]"/>
+    <testcase name="listValorTest" classname="com.alcancia.AlcanciaControllerTest" time="0.004" displayname="listValorTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listValorTest()]"/>
+    <testcase name="saveErrosTest" classname="com.alcancia.AlcanciaControllerTest" time="0.017" displayname="saveErrosTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:saveErrosTest()]"/>
+    <testcase name="listFailedTest" classname="com.alcancia.AlcanciaControllerTest" time="0.007" displayname="listFailedTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listFailedTest()]"/>
+    <testcase name="listCantidadTest" classname="com.alcancia.AlcanciaControllerTest" time="0.004" displayname="listCantidadTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listCantidadTest()]"/>
+    <testcase name="listValorTotalTest" classname="com.alcancia.AlcanciaControllerTest" time="0.003" displayname="listValorTotalTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listValorTotalTest()]"/>
+    <testcase name="listCantidadFailedTest" classname="com.alcancia.AlcanciaControllerTest" time="0.007" displayname="listCantidadFailedTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listCantidadFailedTest()]"/>
+    <testcase name="listTest" classname="com.alcancia.AlcanciaControllerTest" time="0.003" displayname="listTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listTest()]"/>
+    <testcase name="listCantidadTotalTest" classname="com.alcancia.AlcanciaControllerTest" time="0.007" displayname="listCantidadTotalTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listCantidadTotalTest()]"/>
+    <testcase name="saveDataTest" classname="com.alcancia.AlcanciaControllerTest" time="0.006" displayname="saveDataTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:saveDataTest()]"/>
+    <testcase name="listValorFailedTest" classname="com.alcancia.AlcanciaControllerTest" time="0.018" displayname="listValorFailedTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listValorFailedTest()]"/>
+  </testsuite>
+</testrun>

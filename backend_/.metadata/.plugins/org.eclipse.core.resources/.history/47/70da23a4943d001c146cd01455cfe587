@@ -1,0 +1,31 @@
+package com.alcancia.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+@Service
+@Transactional
+public class EjemploService implements IEjemploService {
+
+	@Override
+	public boolean existsByCodigo(String codigo) {
+		return repository.existsByCodigo(codigo);
+	}
+
+	@Override
+	public Optional<Ejemplo> findByCodigo(String codigo) {
+		return repository.findByCodigo(codigo);
+	}
+
+	@Override
+	public boolean existsByNombre(String nombre) {
+		return repository.existsByNombre(nombre);
+	}
+
+	@Override
+	public Optional<Ejemplo> findByNombre(String nombre) {
+		return repository.findByNombre(nombre);
+	}
+	
+}

@@ -1,0 +1,14 @@
+package com.alcancia.service;
+
+import org.springframework.stereotype.Service;
+
+import ps.ms.commons.service.CommonService;
+
+import com.alcancia.entity.TipoMoneda;
+import com.alcancia.repository.ITipoMonedaRepository;
+
+@Service
+public class TipoMonedaService implements ITipoMonedaService {
+
+
+}

@@ -1,0 +1,15 @@
+package com.alcancia.service;
+
+import com.alcancia.entity.Ejemplo;
+
+public interface IEjemploService extends BaseService<Ejemplo> {
+	
+boolean existsByCodigo(String codigo);
+	
+	public Optional<Ejemplo> findByCodigo(String codigo);
+	
+	boolean existsByNombre(String nombre);
+	
+	Optional<Ejemplo> findByNombre(String nombre);
+
+}

@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{{ 'mod.ejemplo.title.edit' | translate }}</h4>
+        <h5 class="card-subtitle">{{ 'mod.ejemplo.subtitle.edit' | translate }}</h5>
+      </div>
+
+      <form autocomplete="off" [formGroup]="miFormulario">
+
+        <div class="card-body border-top border-bottom pb-4">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="mb-2">
+                <label for="tb-codigo" class="control-label col-form-label">{{ 'mod.ejemplo.label.code' | translate }}</label>
+                <input type="text" class="form-control" placeholder="Enter Código" formControlName="codigo">
+              </div>
+              <ng-container *ngIf="ejeValSvs.campoNoValido('codigo', miFormulario)">
+                <span class="text-danger">{{ ejeValSvs.campoErrorMsg('codigo', '3', miFormulario) }}</span>
+              </ng-container>
+              <span class="text-danger"> {{ ejeValSvs.errorBackend(error, 'codigo', miFormulario) }}</span>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="mb-2">
+                <label for="tb-nombre" class="control-label col-form-label">{{ 'mod.ejemplo.label.name' | translate }}</label>
+                <input type="text" class="form-control" placeholder="Enter nombre" formControlName="nombre">
+              </div>
+              <ng-container *ngIf="ejeValSvs.campoNoValido('nombre', miFormulario)">
+                <span class="text-danger">{{ ejeValSvs.campoErrorMsg('nombre', '3', miFormulario) }}</span>
+              </ng-container>
+              <span class="text-danger"> {{ ejeValSvs.errorBackend(error, 'nombre', miFormulario) }}</span>
+            </div>
+          </div>
+        </div>
+
+        <app-buttons-update (updateClicked) ="update($event)" [link] ="['/dashboard/ejemplo']"></app-buttons-update>
+
+      </form>
+
+      <!-- Verificar formulario -->
+      <div class="card-body">
+        <div class="row p-2">
+          <div class="col">
+            <div class="col-lg-12">
+              <div class="table-responsive">
+                <table class="table table-bordered border-dark">
+                  <thead class="bg-inverse text-white">
+                    <tr>
+                      <th>Form Valid</th>
+                      <th>Form inValid</th>
+                      <th>Form Status</th>
+                      <th>Form Touched</th>
+                      <th>Form Pristine</th>
+                      <th>Form errors</th>
+                      <th>Form value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ miFormulario.valid }}</td>
+                      <td>{{ miFormulario.invalid }}</td>
+                      <td>{{ miFormulario.status }}</td>
+                      <td>{{ miFormulario.touched }}</td>
+                      <td>{{ miFormulario.pristine }}</td>
+                      <td>
+                        <pre>{{ miFormulario.errors | json }}</pre>
+                        <pre>{{f.codigo.valid }}</pre>
+                      </td>
+                      <td><pre>{{ miFormulario.value | json }}</pre></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Verificar formulario -->
+    </div>
+  </div>
+</div>

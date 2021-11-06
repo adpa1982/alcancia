@@ -1,0 +1,10 @@
+package com.alcancia.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.alcancia.entity.Alcancia;
+
+public interface IAlcanciaRepository extends JpaRepository<Alcancia, Long> {
+
+
+}

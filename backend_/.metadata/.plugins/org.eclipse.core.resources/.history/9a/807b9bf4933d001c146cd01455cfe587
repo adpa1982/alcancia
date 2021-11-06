@@ -1,0 +1,173 @@
+package com.alcancia.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
+
+@Entity
+@Table(name = "ejemplos")
+@SQLDelete(sql = "UPDATE ejemplos SET deleted_at = now() WHERE id = ?")
+@Where(clause = "deleted_at is null")
+public class Ejemplo implements Serializable  {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @NotEmpty
+    @Pattern(regexp = "[0-9]+", message = "acepta solo números.")
+	@Size(min = 3, max = 3, message = " debe tener entre {min} y {max} caracteres de longitud.")
+    @Column(name = "codigo", nullable = false, length = 3, unique = true)
+    private String codigo;
+
+    @NotNull(message = "Debes especificar el nombre")
+    @Pattern(regexp = "^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ_]+( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ_]+)*$", message = "acepta solo letras y espacio en blanco.")
+	@Size(min = 4, max = 50)
+    @Column(name = "nombre", nullable = false, length = 50, unique = true)
+    private String nombre;
+
+    @Column(name = "created_at", updatable = false, nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
+
+    @Column(name = "updated_at", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updatedAt;
+
+    @Column(name = "deleted_at")
+    private Date deletedAt;
+
+
+
+    public Ejemplo() {
+        super();
+    }
+
+    /**
+     * @Description: Metodo que asigna la fecha justo antes de persistir los datos
+     */
+    @PrePersist
+    public void prePersist() {
+        PSTime timeDate = new PSTime();
+        this.createdAt = timeDate.psTime();
+        this.updatedAt = timeDate.psTime();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        PSTime timeDate = new PSTime();
+        this.updatedAt = timeDate.psTime();
+    }
+
+    @PreRemove
+    public void preRemove() {
+        PSTime timeDate = new PSTime();
+        this.deletedAt = timeDate.psTime();
+    }
+
+
+    /**
+     * Metodo encargado de retornar el id
+     * @return El id asociado a la clase
+     */
+    public Long getId(){
+        return id;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo id
+     * @param id el nuevo id a modificar
+     */
+    public void setId(Long id){
+        this.id = id;
+    }
+
+
+    /**
+     * Metodo encargado de retornar el codigo
+     * @return El codigo asociado a la clase
+     */
+    public String getCodigo(){
+        return codigo;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo codigo
+     * @param codigo el nuevo codigo a modificar
+     */
+    public void setCodigo(String codigo){
+        this.codigo = codigo;
+    }
+
+
+    /**
+     * Metodo encargado de retornar el nombre
+     * @return El nombre asociado a la clase
+     */
+    public String getNombre(){
+        return nombre;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo nombre
+     * @param nombre el nuevo nombre a modificar
+     */
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
+
+    /**
+     * Metodo encargado de retornar el createdAt
+     * @return El createdAt asociado a la clase
+     */
+    public Date getCreatedAt(){
+        return createdAt;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo createdAt
+     * @param createdAt el nuevo createdAt a modificar
+     */
+    public void setCreatedAt(Date createdAt){
+        this.createdAt = createdAt;
+    }
+
+
+    /**
+     * Metodo encargado de retornar el updatedAt
+     * @return El updatedAt asociado a la clase
+     */
+    public Date getUpdatedAt(){
+        return updatedAt;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo updatedAt
+     * @param updatedAt el nuevo updatedAt a modificar
+     */
+    public void setUpdatedAt(Date updatedAt){
+        this.updatedAt = updatedAt;
+    }
+
+
+    /**
+     * Metodo encargado de retornar el deletedAt
+     * @return El deletedAt asociado a la clase
+     */
+    public Date getDeletedAt(){
+        return deletedAt;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo deletedAt
+     * @param deletedAt el nuevo deletedAt a modificar
+     */
+    public void setDeletedAt(Date deletedAt){
+        this.deletedAt = deletedAt;
+    }
+
+
+}

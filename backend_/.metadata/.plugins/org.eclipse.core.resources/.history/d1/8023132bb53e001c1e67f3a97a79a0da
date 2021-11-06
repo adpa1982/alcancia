@@ -1,0 +1,28 @@
+package com.alcancia;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.MockitoAnnotations;
+
+import com.alcancia.utils.ErrorsFuntions;
+
+class ErrorsFuntionsTest {
+	
+	
+	
+	@BeforeEach
+	void setUp() {
+		MockitoAnnotations.initMocks(this);
+		
+	}
+
+	@Test
+	void primerletraTest() {
+		String word = "primeraLetra";
+		String pm = ErrorsFuntions.primerletra(letra);
+		assertEquals("Primeraletras", pm);
+	}
+
+}

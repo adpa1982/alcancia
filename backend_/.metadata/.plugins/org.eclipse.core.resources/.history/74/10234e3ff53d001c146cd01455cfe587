@@ -1,0 +1,11 @@
+package com.alcancia.service;
+
+import org.springframework.data.repository.query.Param;
+
+import com.alcancia.entity.Alcancia;
+
+public interface IAlcanciaService extends BaseService<Alcancia> {
+	
+	public Iterable<Alcancia> findAlcanciaByTipoMonedaByIdByGroupByNombre(@Param("id") Long id);
+
+}

@@ -1,0 +1,18 @@
+.table {
+  border-radius: 5px;
+  width: 50%;
+  margin: 0px auto;
+  float: none;
+}
+
+table tr th {
+  text-align: center;
+}
+
+table tr td {
+  text-align: left;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}

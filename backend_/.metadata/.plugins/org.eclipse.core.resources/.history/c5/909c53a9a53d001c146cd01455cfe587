@@ -1,0 +1,8 @@
+package com.alcancia.service;
+
+import com.alcancia.entity.TipoMoneda;
+
+public interface ITipoMonedaService extends BaseService<TipoMoneda> {
+
+
+}

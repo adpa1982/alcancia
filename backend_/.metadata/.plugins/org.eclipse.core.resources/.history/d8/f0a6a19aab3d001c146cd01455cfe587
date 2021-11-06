@@ -1,0 +1,18 @@
+package com.alcancia.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.alcancia.entity.Ejemplo;
+import com.alcancia.entity.TipoMoneda;
+
+@Repository
+public interface ITipoMonedaRepository extends JpaRepository<TipoMoneda, Long> {
+
+	boolean existsByNombre(String nombre);
+	
+	Optional<Ejemplo> findByNombre(String nombre);
+
+}

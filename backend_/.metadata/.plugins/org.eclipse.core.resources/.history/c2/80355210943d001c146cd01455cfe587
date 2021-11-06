@@ -1,0 +1,5 @@
+package com.alcancia.repository;
+
+public interface IEjemploRepository extends JpaRepository<Ejemplo, Long> {
+
+}

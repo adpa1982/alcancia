@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{{ 'mod.alcancia.title.edit' | translate }}</h4>
+        <h5 class="card-subtitle">{{ 'mod.alcancia.subtitle.edit' | translate }}</h5>
+      </div>
+
+      <form autocomplete="off" [formGroup]="miFormulario">
+
+        <div class="card-body border-top border-bottom pb-4">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="mb-2">
+                <label for="tb-tipomoneda" class="control-label col-form-label">{{ 'mod.alcancia.label.idTipomoneda' | translate }}</label>
+                <select id="tipomoneda" name="tipomoneda" class="form-control custom-select" formControlName="tipoMoneda" [compareWith]="alcanciaValSvc.compararObject" >
+                  <option value="" selected>--- Select a tipo de moneda ---</option>
+                  <option *ngFor="let tipoMoneda of tipoMonedas" [ngValue]="tipoMoneda">{{ tipoMoneda.nombre }}</option>
+                </select>
+              </div>
+              <ng-container *ngIf="alcanciaValSvc.campoNoValido('tipoMoneda', miFormulario)">
+                <span class="text-danger">{{ alcanciaValSvc.campoErrorMsg('tipoMoneda', miFormulario) }}</span>
+              </ng-container>
+            </div>
+          </div><br />
+
+          <div class="row" *ngIf="bool">
+            <div class="col-lg-6 col-md-8">
+              <div class="card bg-info">
+                <div class="card-body">
+                  <div id="myCarousel" data-ride="carousel" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active flex-column">
+                        <h2 class="text-white font-medium">CANTIDAD DE MONEDAS POR DENOMINACIÓN</h2>
+                        <p class="text-white font-20">La cantidad de monedas de <b>{{moneda}}</b> son <b>{{cantidad}}</b> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-8">
+              <div class="card bg-primary">
+                <div class="card-body">
+                  <div id="myCarousel2" data-ride="carousel" class="carousel slide vert">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active flex-column">
+                        <h2 class="text-white font-medium">CANTIDAD DE DINERO POR DENOMINACIÓN</h2>
+                        <p class="text-white font-20">La cantidad de dinero en monedas de <b>{{moneda}}</b> es <b>${{valor}}</b> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="p-3">
+          <div class="action-form col-12 col-md-12">
+            <div class="text-end">
+              <button type="button"(click)="consultar($event)" class="btn btn-outline-primary waves-effect waves-light font-weight-medium rounded-pill px-4 m-1">
+                <i class="ti-search"></i>&nbsp;&nbsp;Consultar
+              </button>
+              <button type="button" [routerLink]="['/dashboard/alcancia']" class="btn btn-outline-danger waves-effect waves-light font-weight-medium rounded-pill px-4 m-2">
+                <i class="ti-close"></i>&nbsp;&nbsp;{{ 'global.btn.cancel' | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

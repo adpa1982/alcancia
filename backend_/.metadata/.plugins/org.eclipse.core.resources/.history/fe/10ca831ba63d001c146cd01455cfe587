@@ -1,0 +1,92 @@
+package com.alcancia.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import javax.validation.Valid;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GettMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ps.ms.commons.controller.CommonController;
+import com.alcancia.dto.TipoMonedaDto;
+import com.alcancia.entity.TipoMoneda;
+import com.alcancia.service.ITipoMonedaService;
+import utils.constants.CommonControllerConstans;
+import utils.funtions.CommonsFuntions;
+import utils.funtions.MessagesFunctions;
+
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping("/tipomoneda")
+public class TipoMonedaController {
+
+    @PostMapping("/")
+    public ResponseEntity<?> savee(@Valid @RequestBody TipoMonedaDto tipomonedaDto, BindingResult result) {
+
+        if (result.hasErrors()) {
+            return this.validates(result);
+        }
+
+        TipoMoneda tipomoneda = new TipoMoneda();
+        tipomoneda.setNombre(tipomonedaDto.getNombre());
+
+        return super.save(tipomoneda);
+    }
+
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updatee(@Valid @RequestBody TipoMonedaDto tipomonedaDto, BindingResult result, @PathVariable Long id) {
+
+        if (result.hasErrors()) {
+            return this.validates(result);
+        }
+
+        Optional<TipoMoneda> objectTipoMoneda = service.findById(id);
+        if (objectTipoMoneda.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(MessagesFunctions.notFound("del tipomoneda"));
+        }
+
+        List<Object> newList = isUpdatable(tipomonedaDto, objectTipoMoneda);
+        if (newList.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_MODIFIED).body(MessagesFunctions.notModified("del tipomoneda"));
+        }
+
+        TipoMoneda tipomonedaDb = objectTipoMoneda.get();
+        tipomonedaDb.setNombre(tipomonedaDto.getNombre());
+
+        return super.update(tipomonedaDb);
+    }
+
+
+    private List<Object> isUpdatable(TipoMonedaDto tipomonedaDto, Optional<TipoMoneda> objectTipoMoneda) {
+        List<Object> newList = new ArrayList<>();
+        List<Object> dto = new ArrayList<>();
+        List<Object> model = new ArrayList<>();
+
+        dto.add(tipomonedaDto.getNombre());
+
+        if (!objectTipoMoneda.isEmpty()) {
+            model.add(objectTipoMoneda.get().getNombre());
+        }
+
+        for (Object element : model) {
+            if (!dto.contains(element)) {
+                newList.add(element);
+            }
+        }
+        return newList;
+    }
+
+}

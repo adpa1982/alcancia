@@ -1,0 +1,12 @@
+<div class="p-3">
+  <div class="action-form col-12 col-md-12">
+    <div class="text-end">
+      <button type="button" (click)="onClickButton($event)" class="btn btn-outline-success waves-effect waves-light font-weight-medium rounded-pill px-4 m-2">
+        <i class="ti-check"></i>&nbsp;&nbsp;{{ 'global.btn.update' | translate }}
+      </button>
+      <button type="button" [routerLink]="link" class="btn btn-outline-info waves-effect waves-light font-weight-medium rounded-pill px-4 m-1">
+        <i class="ti-search"></i>&nbsp;&nbsp;{{ 'global.btn.search' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

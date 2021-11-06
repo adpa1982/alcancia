@@ -1,0 +1,5 @@
+package com.alcancia.dto;
+
+public class EjemploDto {
+
+}

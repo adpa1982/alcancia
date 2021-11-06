@@ -1,0 +1,10 @@
+package com.alcancia.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.alcancia.entity.TipoMoneda;
+
+public interface ITipoMonedaRepository extends JpaRepository<TipoMoneda, Long> {
+
+
+}

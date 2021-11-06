@@ -1,0 +1,13 @@
+.page-breadcrumb {
+    padding: 40px;
+    padding-bottom: 10px;
+}
+
+.brand-basic {
+    background-color: #ffffff;    
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #009efb;
+}

@@ -1,0 +1,70 @@
+package com.alcancia;
+
+import static org.hamcrest.CoreMatchers.any;
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+
+import com.alcancia.controller.TipoMonedaController;
+import com.alcancia.dto.TipoMonedaDto;
+import com.alcancia.entity.TipoMoneda;
+import com.alcancia.service.TipoMonedaService;
+
+class TipoModenaControllerTest {
+	
+	@InjectMocks
+	private TipoMonedaController controller;
+	
+	@Mock
+	private TipoMonedaService service;
+	
+	@Autowired
+    private BindingResult result;
+	
+	private TipoMoneda tipoMoneda;
+	
+	private TipoMonedaDto tipoMonedaDto;
+	
+	@BeforeEach
+	void setUp() {
+		MockitoAnnotations.initMocks(this);
+		
+		tipoMoneda = new TipoMoneda();
+		tipoMoneda.setId((long) 7);
+		tipoMoneda.setNombre(5000);
+		
+		tipoMonedaDto = new TipoMonedaDto();
+		tipoMonedaDto.setId((long) 7);
+		tipoMonedaDto.setNombre(5000);
+	}
+	
+	@Test
+	void saveTest() {
+		when(service.save(tipoMoneda)).thenReturn(tipoMoneda);
+		when(result.hasErrors()).thenReturn(false);
+		ResponseEntity<?> res = controller.save(tipoMonedaDto, result);
+		assertEquals(HttpStatus.CREATED, res.status(HttpStatus.CREATED) );
+		// assertNotNull(service.findAll());
+	}
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

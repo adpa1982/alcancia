@@ -1,0 +1,79 @@
+{
+    "title": "App",
+    "global": {
+      "btn": {
+        "cancel": "Cancel",
+        "edit"  : "Modify",
+        "delete": "Remove",
+        "save"  : "Save",
+        "update": "Upgrade",
+        "search": "Search"
+      },
+      "valid": {
+        "dateMinTodayError"        : "The date cannot be less than the current date. ",
+        "dateMaxError"             : "The start date cannot be greater than the end date.",
+        "dateMinError"             : "The end date cannot be less than the start date.",
+        "emailRegisteredError"     : "The email has already been registered previously.",
+        "fileTypeError"            : "The file type is not supported, please upload a file .{{ type }}.",
+        "fileSizeError"            : "The file size cannot exceed {{ kb }} kb ",
+        "lengthMinError"           : "The field cannot contain less than {{ min }} characters.",
+        "lengthMaxError"           : "The field cannot contain more than {{ max }} characters.",
+        "notDataAvailable"         : "No records for {{ modulo }} were found on the system.",
+        "regexAlphaNumberWordError": "Invalid alphanumeric format. ",
+        "regexAnyWordError"        : "Invalid format. ",
+        "regexCharWordError"       : "Invalid character format, only letters are accepted.",
+        "regexDateError"           : "Invalid date format.",
+        "regexDefaultError"        : "Invalid format, do not use special characters.",
+        "regexEmailError"          : "Invalid email format. ",
+        "regexNameError"           : "Invalid format, do not use special characters.",
+        "regexNameLastNameError"   : "It must be in the first and last name format.",
+        "regexNumberError"         : "Invalid number format.",
+        "regexPasswordError"       : "The password must include a minimum length of 8 characters, an uppercase letter, a lowercase letter, a number, a special character (@ # $% ^ & + = /.) And must not have spaces.",
+        "regexPercentError"        : "Invalid percentage format, use decimal point (.).",
+        "regexWordError"           : "Invalid format, do not use special characters or spaces. ",
+        "required"                 : "Required field.",
+        "validateForm"             : "You must enter all the data to send the request."
+      }
+    },
+    "mod": {
+      "ejemplo": {
+        "title"   : "Crear Ejemplo",
+        "subtitle": "Formulario para crear ejemplos",
+        "label": {
+          "code": "Código",
+          "name":  "Nombre"
+        }
+      },
+      "prueba": {
+        "title"   : "Ejemplo fromArray",
+        "subtitle": "Formulario para crear inputs dinamicos",
+        "label": {
+          "code"         : "Code",
+          "gener"        : "Género",
+          "addMultiQuan" : "Username",
+          "quantity"     : "Quantity",
+          "price"        : "Price",
+          "notifications": "Notificaciones"
+        },
+        "btn": {
+          "addMore": "Agregar más"
+        }
+      },
+      "validaciones": {
+        "title"   : "Validations",
+        "subtitle": "Input validation form",
+        "label": {
+          "name"     : "Name",
+          "email"    : "Email",
+          "username" : "Username",
+          "password" : "Password",
+          "password2": "Confirm password",
+          "code"     : "Code"
+        },
+        "btn": {
+          "mensaje": "Message",
+          "color"  : "Colour"
+        }
+      }
+    }
+  }

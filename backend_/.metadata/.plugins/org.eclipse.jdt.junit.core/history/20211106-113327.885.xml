@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="alcancia" project="alcancia" tests="32" started="32" failures="0" errors="0" ignored="0">
+  <testsuite name="com.alcancia.TipoModenaControllerTest" time="1.704" displayname="TipoModenaControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoModenaControllerTest]">
+    <testcase name="saveTest" classname="com.alcancia.TipoModenaControllerTest" time="1.666" displayname="saveTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoModenaControllerTest]/[method:saveTest()]"/>
+    <testcase name="saveErrosTest" classname="com.alcancia.TipoModenaControllerTest" time="0.009" displayname="saveErrosTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoModenaControllerTest]/[method:saveErrosTest()]"/>
+    <testcase name="listFailedTest" classname="com.alcancia.TipoModenaControllerTest" time="0.009" displayname="listFailedTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoModenaControllerTest]/[method:listFailedTest()]"/>
+    <testcase name="listOrderTest" classname="com.alcancia.TipoModenaControllerTest" time="0.005" displayname="listOrderTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoModenaControllerTest]/[method:listOrderTest()]"/>
+    <testcase name="saveUsedTest" classname="com.alcancia.TipoModenaControllerTest" time="0.004" displayname="saveUsedTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoModenaControllerTest]/[method:saveUsedTest()]"/>
+    <testcase name="listTest" classname="com.alcancia.TipoModenaControllerTest" time="0.003" displayname="listTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoModenaControllerTest]/[method:listTest()]"/>
+    <testcase name="saveDataTest" classname="com.alcancia.TipoModenaControllerTest" time="0.008" displayname="saveDataTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoModenaControllerTest]/[method:saveDataTest()]"/>
+  </testsuite>
+  <testsuite name="com.alcancia.ErrorsFuntionsTest" time="21.563" displayname="ErrorsFuntionsTest" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.ErrorsFuntionsTest]">
+    <testcase name="primerletraTest" classname="com.alcancia.ErrorsFuntionsTest" time="0.021" displayname="primerletraTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.ErrorsFuntionsTest]/[method:primerletraTest()]"/>
+    <testcase name="campoTablaTest" classname="com.alcancia.ErrorsFuntionsTest" time="0.002" displayname="campoTablaTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.ErrorsFuntionsTest]/[method:campoTablaTest()]"/>
+    <testcase name="errorMessageSaveTest" classname="com.alcancia.ErrorsFuntionsTest" time="21.539" displayname="errorMessageSaveTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.ErrorsFuntionsTest]/[method:errorMessageSaveTest()]"/>
+  </testsuite>
+  <testsuite name="com.alcancia.TipoMonedaServiceTest" time="0.141" displayname="TipoMonedaServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoMonedaServiceTest]">
+    <testcase name="saveTest" classname="com.alcancia.TipoMonedaServiceTest" time="0.052" displayname="saveTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoMonedaServiceTest]/[method:saveTest()]"/>
+    <testcase name="findAllByOrderByNombreAscTest" classname="com.alcancia.TipoMonedaServiceTest" time="0.027" displayname="findAllByOrderByNombreAscTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoMonedaServiceTest]/[method:findAllByOrderByNombreAscTest()]"/>
+    <testcase name="findAllTest" classname="com.alcancia.TipoMonedaServiceTest" time="0.022" displayname="findAllTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoMonedaServiceTest]/[method:findAllTest()]"/>
+    <testcase name="existsByNombreTest" classname="com.alcancia.TipoMonedaServiceTest" time="0.019" displayname="existsByNombreTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoMonedaServiceTest]/[method:existsByNombreTest()]"/>
+    <testcase name="findByNombreTest" classname="com.alcancia.TipoMonedaServiceTest" time="0.01" displayname="findByNombreTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoMonedaServiceTest]/[method:findByNombreTest()]"/>
+    <testcase name="findByIdTest" classname="com.alcancia.TipoMonedaServiceTest" time="0.011" displayname="findByIdTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.TipoMonedaServiceTest]/[method:findByIdTest()]"/>
+  </testsuite>
+  <testsuite name="com.alcancia.AlcanciaControllerTest" time="0.113" displayname="AlcanciaControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]">
+    <testcase name="saveTest" classname="com.alcancia.AlcanciaControllerTest" time="0.049" displayname="saveTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:saveTest()]"/>
+    <testcase name="listValorTest" classname="com.alcancia.AlcanciaControllerTest" time="0.013" displayname="listValorTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listValorTest()]"/>
+    <testcase name="saveErrosTest" classname="com.alcancia.AlcanciaControllerTest" time="0.009" displayname="saveErrosTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:saveErrosTest()]"/>
+    <testcase name="listFailedTest" classname="com.alcancia.AlcanciaControllerTest" time="0.006" displayname="listFailedTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listFailedTest()]"/>
+    <testcase name="listCantidadTest" classname="com.alcancia.AlcanciaControllerTest" time="0.002" displayname="listCantidadTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listCantidadTest()]"/>
+    <testcase name="listCantidadFailedTest" classname="com.alcancia.AlcanciaControllerTest" time="0.003" displayname="listCantidadFailedTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listCantidadFailedTest()]"/>
+    <testcase name="listTest" classname="com.alcancia.AlcanciaControllerTest" time="0.003" displayname="listTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listTest()]"/>
+    <testcase name="saveDataTest" classname="com.alcancia.AlcanciaControllerTest" time="0.006" displayname="saveDataTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:saveDataTest()]"/>
+    <testcase name="listValorFailedTest" classname="com.alcancia.AlcanciaControllerTest" time="0.022" displayname="listValorFailedTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaControllerTest]/[method:listValorFailedTest()]"/>
+  </testsuite>
+  <testsuite name="com.alcancia.AlcanciaApplicationTests" time="0.15" displayname="AlcanciaApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaApplicationTests]">
+    <testcase name="contextLoads" classname="com.alcancia.AlcanciaApplicationTests" time="0.15" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+  <testsuite name="com.alcancia.AlcanciaServiceTest" time="0.105" displayname="AlcanciaServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]">
+    <testcase name="saveTest" classname="com.alcancia.AlcanciaServiceTest" time="0.017" displayname="saveTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:saveTest()]"/>
+    <testcase name="findAlcanciaByMonedasTest" classname="com.alcancia.AlcanciaServiceTest" time="0.019" displayname="findAlcanciaByMonedasTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:findAlcanciaByMonedasTest()]"/>
+    <testcase name="findAlcanciaByTipoMonedaValorByIdByGroupByNombreTest" classname="com.alcancia.AlcanciaServiceTest" time="0.018" displayname="findAlcanciaByTipoMonedaValorByIdByGroupByNombreTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:findAlcanciaByTipoMonedaValorByIdByGroupByNombreTest()]"/>
+    <testcase name="findAllTest" classname="com.alcancia.AlcanciaServiceTest" time="0.028" displayname="findAllTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:findAllTest()]"/>
+    <testcase name="findAlcanciaByTipoMonedaByIdByGroupByNombreTest" classname="com.alcancia.AlcanciaServiceTest" time="0.011" displayname="findAlcanciaByTipoMonedaByIdByGroupByNombreTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:findAlcanciaByTipoMonedaByIdByGroupByNombreTest()]"/>
+    <testcase name="findAlcanciaByValorTest" classname="com.alcancia.AlcanciaServiceTest" time="0.012" displayname="findAlcanciaByValorTest()" uniqueid="[engine:junit-jupiter]/[class:com.alcancia.AlcanciaServiceTest]/[method:findAlcanciaByValorTest()]"/>
+  </testsuite>
+</testrun>

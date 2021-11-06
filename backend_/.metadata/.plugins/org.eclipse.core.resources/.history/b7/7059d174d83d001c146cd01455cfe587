@@ -1,0 +1,10 @@
+package com.alcancia.service;
+
+import ps.ms.commons.service.ICommonService;
+
+import com.alcancia.entity.Alcancia;
+
+public interface IAlcanciaService extends ICommonService<Alcancia> {
+
+
+}

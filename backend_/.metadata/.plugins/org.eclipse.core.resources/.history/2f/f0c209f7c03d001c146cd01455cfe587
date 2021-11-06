@@ -1,0 +1,159 @@
+package com.alcancia.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
+import com.alcancia.utils.Time;
+
+@Entity
+@Table(name = "tipomonedas")
+@SQLDelete(sql = "UPDATE tipomonedas SET deleted_at = now() WHERE id = ?")
+@Where(clause = "deleted_at is null")
+public class TipoMoneda implements Serializable  {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @NotNull
+	@Pattern(regexp = "[0-9]+", message = "acepta solo números.")
+	@Size(min = 3, max = 3, message = " debe tener entre {min} y {max} caracteres de longitud.")
+    @Column(name = "nombre")
+    private String nombre;
+
+    @Column(name = "created_at", updatable = false, nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
+
+    @Column(name = "updated_at", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updatedAt;
+
+    @Column(name = "deleted_at")
+    private Date deletedAt;
+
+
+
+    public TipoMoneda() {
+        super();
+    }
+
+    /**
+     * @Description: Metodo que asigna la fecha justo antes de persistir los datos
+     */
+    @PrePersist
+    public void prePersist() {
+        Time timeDate = new Time();
+        this.createdAt = timeDate.getPsTime();
+        this.updatedAt = timeDate.getPsTime();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+    	Time timeDate = new Time();
+        this.updatedAt = timeDate.getPsTime();
+    }
+
+    @PreRemove
+    public void preRemove() {
+    	Time timeDate = new Time();
+        this.deletedAt = timeDate.getPsTime();
+    }
+
+
+    /**
+     * Metodo encargado de retornar el id
+     *
+     * @return El id asociado a la clase
+     */
+    public Long getId(){
+        return id;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo id
+     *
+     * @param id el nuevo id a modificar
+     */
+    public void setId(Long id){
+        this.id = id;
+    }
+
+    /**
+     * Metodo encargado de retornar el nombre
+     *
+     * @return El nombre asociado a la clase
+     */
+    public String getNombre(){
+        return nombre;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo nombre
+     *
+     * @param nombre el nuevo nombre a modificar
+     */
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
+    /**
+     * Metodo encargado de retornar el createdAt
+     *
+     * @return El createdAt asociado a la clase
+     */
+    public Date getCreatedAt(){
+        return createdAt;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo createdAt
+     *
+     * @param createdAt el nuevo createdAt a modificar
+     */
+    public void setCreatedAt(Date createdAt){
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * Metodo encargado de retornar el updatedAt
+     *
+     * @return El updatedAt asociado a la clase
+     */
+    public Date getUpdatedAt(){
+        return updatedAt;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo updatedAt
+     *
+     * @param updatedAt el nuevo updatedAt a modificar
+     */
+    public void setUpdatedAt(Date updatedAt){
+        this.updatedAt = updatedAt;
+    }
+
+    /**
+     * Metodo encargado de retornar el deletedAt
+     *
+     * @return El deletedAt asociado a la clase
+     */
+    public Date getDeletedAt(){
+        return deletedAt;
+    }
+    /**
+     * Metodo encargado de modificar el valor del atributo deletedAt
+     *
+     * @param deletedAt el nuevo deletedAt a modificar
+     */
+    public void setDeletedAt(Date deletedAt){
+        this.deletedAt = deletedAt;
+    }
+
+}

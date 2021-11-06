@@ -1,0 +1,13 @@
+package com.alcancia.service;
+
+import java.util.Optional;
+
+import com.alcancia.entity.TipoMoneda;
+
+public interface ITipoMonedaService extends BaseService<TipoMoneda> {
+
+	boolean existsByNombre(Integer nombre);
+	
+	Optional<TipoMoneda> findByNombre(Integer nombre);
+
+}

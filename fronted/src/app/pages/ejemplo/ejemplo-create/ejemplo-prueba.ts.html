@@ -1,0 +1,213 @@
+<!-- Create -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-3">Crear Ejemplo</h4>
+                <h5 class="card-subtitle mb-3 border-bottom pb-3">Formulario para crear ejemplos</h5>
+                <form>
+
+                    <div class="row p-2">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="tb-fname" class="control-label col-form-label">First Name</label>
+                                <input type="text" class="form-control" id="tb-fname" placeholder="Enter Name here">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="tb-email" class="control-label col-form-label">Email address</label>
+                                <input type="email" class="form-control" id="tb-email" placeholder="name@example.com">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="tb-pwd" class="control-label col-form-label">Password</label>
+                                <input type="password" class="form-control" id="tb-pwd" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="tb-cpwd" class="control-label col-form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="tb-cpwd" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="p-3 border-top">
+                            <div class="action-form col-12 col-md-12">
+                                <div class="text-end">
+                                    <button type="button" class="btn btn-outline-success waves-effect waves-light font-weight-medium rounded-pill px-4 m-2">
+                                        <i class="ti-check"></i>&nbsp;&nbsp;Save
+                                    </button>
+                                    <button type="button" class="btn btn-outline-info waves-effect waves-light font-weight-medium rounded-pill px-4 m-1">
+                                        <i class="ti-search"></i>&nbsp;&nbsp;Search
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary waves-effect waves-light font-weight-medium rounded-pill px-4 m-1">
+                                        <i class="ti-pencil"></i>&nbsp;&nbsp;Edit
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger waves-effect waves-light font-weight-medium rounded-pill px-4 m-1">
+                                        <i class="ti-trash"></i>&nbsp;&nbsp;Delete
+                                    </button>
+                                    <button type="button" class="btn btn-outline-dark waves-effect waves-light font-weight-medium rounded-pill px-4 m-1">
+                                        <i class="ti-eye"></i>&nbsp;&nbsp;View
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  -->
+
+:host /deep/ ng2-smart-table table{
+  border-color: initial;
+  border-image: initial;
+  border-width: 2px;
+  text-align: center;
+
+  display: table;
+  border-spacing: 2px;
+  border-color: #edf1f7;
+
+  border-collapse: collapse;
+
+  font-size: 16px;
+}
+
+:host /deep/ ng2-smart-table table tbody tr:nth-of-type(2n){
+  background-color:#f7f9fc;
+}
+
+
+:host /deep/ ng2-smart-table .ng2-smart-actions {
+  max-width: 100px;
+}
+
+/* grid lines */
+:host /deep/ ng2-smart-table table > tbody > tr > td {
+  box-sizing: border-box;
+  border: 1px solid #edf1f7;
+  font-weight: 400;
+}
+
+:host /deep/ ng2-smart-table table > tbody > tr:hover {
+  background-color:#edf1f7;
+}
+
+/* headers grid color*/
+:host /deep/ ng2-smart-table table thead > tr > th  {
+  border: 1px solid #edf1f7;
+  background-color: #FFFFFF;
+}
+
+:host /deep/ ng2-smart-table table thead tr.ng2-smart-titles th.ng2-smart-th .ng2-smart-title .ng2-smart-sort  {
+  font-weight: bold !important;
+  color: #007bff;
+}
+
+:host /deep/ ng2-smart-table table thead tr.ng2-smart-titles .ng2-smart-title {
+  font-weight: bold !important;
+  color: #007bff;
+  font-size: 16px;
+}
+
+:host /deep/ ng2-smart-table table tbody a {
+  color: #222b45;
+  margin-left: 10px;
+  text-decoration: none !important;
+}
+
+:host /deep/ ng2-smart-table .ng2-smart-action-delete-delete {
+  color: #222b45;
+}
+
+:host /deep/ ng2-smart-table table tbody tr td a i {
+  font-size: 32px;
+}
+
+:host /deep/ ng2-st-tbody-edit-delete a.ng2-smart-action.ng2-smart-action-delete-delete {
+  color: #ff779b;
+}
+
+:host /deep/ ng2-st-tbody-edit-delete a.ng2-smart-action.ng2-smart-action-delete-delete:hover {
+  color: #ff3d71;
+}
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ti-eye{
+  color: #4ca2ff;
+}
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ti-eye:hover{
+  color: #007bff;
+}
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ti-pencil{
+  color:#4ce2b0;
+}
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom i.ti-pencil:hover{
+  color:#00d68f;
+}
+
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+  display: inline-block;
+  font-size: 32px;
+}
+
+
+  /* 911, 1378 */
+@media (min-width: 711px) and (max-width: 847px) {
+
+  :host /deep/ ng2-smart-table table tbody tr td a i {
+    font-size: 32px;
+  }
+
+  :host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.1em;
+  }
+}
+@media (min-width: 858px) and (max-width: 910px) {
+  :host /deep/ ng2-smart-table .ng2-smart-actions {
+    max-width: 100%;
+  }
+}
+@media (min-width: 911px) and (max-width: 1378px) {
+  :host /deep/ ng2-smart-table .ng2-smart-actions {
+    max-width: 100%;
+  }
+}
+
+/* Paginador */
+:host /deep/ ng2-smart-table ng2-smart-table-pager nav {
+  margin: 0 auto;
+  padding-top: 20px;
+  text-decoration: none !important;
+  font-weight: 400;
+}
+
+:host /deep/ ng2-smart-table ng2-smart-table-pager nav ul li a {
+  text-decoration: none !important;
+  color:#007bff;
+}
+
+:host /deep/ ng2-smart-table ng2-smart-table-pager nav ul li.ng2-smart-page-item.page-item.disabled .page-link {
+	color: #dfe3ea !important;
+  border-color: #edf1f7;
+  background-color: #fff;
+}
+
+:host /deep/ ng2-smart-table ng2-smart-table-pager nav ul li.ng2-smart-page-item.page-item .page-link {
+	padding: 12px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 4px !important;
+}

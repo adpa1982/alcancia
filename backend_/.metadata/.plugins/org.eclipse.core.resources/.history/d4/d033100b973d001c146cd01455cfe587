@@ -1,0 +1,9 @@
+package com.alcancia.utils;
+
+public class ErrorsFuntions {
+	
+	private ErrorsFuntions() {
+	    throw new IllegalStateException("ErrorsFuntions class");
+	}
+
+}

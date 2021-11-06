@@ -1,0 +1,56 @@
+package com.alcancia.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.alcancia.entity.Ejemplo;
+import com.alcancia.repository.IEjemploRepository;
+
+@Service
+@Transactional
+public class EjemploService implements IEjemploService {
+	
+	@Autowired
+	private IEjemploRepository repository;
+
+	@Override
+	public List<Ejemplo> findAll() {
+		return repository.findAll();
+	}
+	
+	@Override
+	public Optional<Ejemplo> findById(Long id) {
+		return repository.findById(id);
+	}
+	
+	@Override
+	public Optional<Ejemplo> findByNombre(String nombre) {
+		return repository.findByNombre(nombre);
+	}
+	
+	@Override
+	public boolean existsById(Long id) {
+		return repository.existsById(id);
+	}
+	
+	@Override
+	public boolean existsByNombre(String nombre) {
+		return repository.existsByNombre(nombre);
+	}
+	
+	@Override
+	public Ejemplo save(Ejemplo ejemplo) {
+		return repository.save(ejemplo);
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+	}
+	
+}

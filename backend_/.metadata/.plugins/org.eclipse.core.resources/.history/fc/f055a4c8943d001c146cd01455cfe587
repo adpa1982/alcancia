@@ -1,0 +1,39 @@
+package com.alcancia.service;
+
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.alcancia.entity.Ejemplo;
+import com.alcancia.repository.IEjemploRepository;
+
+@Service
+public class EjemploService implements IEjemploService {
+	
+	@Autowired
+	private IEjemploRepository repository;
+
+	@Override
+	public boolean existsByCodigo(String codigo) {
+		return repository.existsByCodigo(codigo);
+	}
+
+	@Override
+	public Optional<Ejemplo> findByCodigo(String codigo) {
+		return repository.findByCodigo(codigo);
+	}
+
+	@Override
+	public boolean existsByNombre(String nombre) {
+		return repository.existsByNombre(nombre);
+	}
+
+	@Override
+	public Optional<Ejemplo> findByNombre(String nombre) {
+		return repository.findByNombre(nombre);
+	}
+	
+}

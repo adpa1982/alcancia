@@ -1,0 +1,12 @@
+
+a
+java:S1452c"&Remove usage of generic wildcard type.(Ö•ˆßûÿÿÿÿ8Š…«áÎ/HµRCRITICALZ
+CODE_SMELL
+a
+java:S1452D"&Remove usage of generic wildcard type.(÷«±¥ÿÿÿÿÿ8Š…«áÎ/HºRCRITICALZ
+CODE_SMELL
+\
+java:S1452["&Remove usage of generic wildcard type.(ÿ·óú8Š…«áÎ/H¶RCRITICALZ
+CODE_SMELL
+z
+java:S2259f"IA "NullPointerException" could be thrown; "getMessage()" can return null.(Ù»…šþÿÿÿÿ8Š…«áÎ/H·RMAJORZBUG

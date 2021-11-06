@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title mb-3">{{ 'mod.tipomoneda.title.list' | translate }}</h4>
+        <h5 class="card-subtitle mb-3 border-bottom pb-3">{{ 'mod.tipomoneda.subtitle.list' | translate }}</h5>
+        <button type="button" routerLink="/dashboard/tipomoneda/create" class="btn btn-success waves-effect waves-light font-weight-medium rounded-pill px-4 m-2">
+          <i class="ti-check"></i>&nbsp;&nbsp; Crear
+        </button>
+      </div>
+
+      <div class="card-body border-top border-bottom pb-4">
+        <div class="row">
+          <div class="alert alert-info" role="alert" *ngIf="tipomoneda?.length == 0; else data">
+            <strong>{{ 'global.valid.notDataAvailable' | translate: { modulo: 'tipo de moneda' } }}</strong>
+          </div>
+          <ng-template #data>
+            <ng2-smart-table [settings]="settings" [source]="source"
+                (deleteConfirm)="onDeleteConfirm($event)"
+                (custom)="onCustomAction($event)">
+            </ng2-smart-table>
+          </ng-template>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,172 @@
+package com.alcancia.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.TransactionSystemException;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alcancia.dto.EjemploDto;
+import com.alcancia.entity.Ejemplo;
+import com.alcancia.service.EjemploService;
+import com.alcancia.utils.ErrorsFuntions;
+
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping("/ejemplo")
+public class EjemploController {
+	
+	@Autowired
+	private EjemploService service;
+	
+	@GetMapping("/")
+	public ResponseEntity<?> list() {
+		try {
+			Iterable<Ejemplo> list = service.findAll();
+			return ResponseEntity.status(HttpStatus.OK).body(list);
+		} catch (DataAccessException e) {
+			return ErrorsFuntions.errorMessage(e, "Failed to search client from database!");
+		}
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<?> detail(@PathVariable Long id) {
+		Optional<Ejemplo> entity = Optional.empty();
+		try {
+			entity = service.findById(id);
+			if (entity.isEmpty()) {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(CommonControllerConstansts.NOT_FOUND);
+			}
+			return ResponseEntity.status(HttpStatus.OK).body(entity.get());
+		} catch (DataAccessException e) {
+			return CommonsFuntions.errorMessage(e, CommonControllerConstansts.MSGDETAIL);
+		}
+	}
+	
+	@PostMapping("/create")
+	public ResponseEntity<?> save(@Valid @RequestBody EjemploDto ejemploDto, BindingResult result) {
+
+		if (result.hasErrors()) {
+			return this.validates(result);
+		}
+
+		if (service.existsByCodigo(ejemploDto.getCodigo())) {
+			return ResponseEntity.status(HttpStatus.IM_USED).body("Ya existe un código de ejemplo registrado anteriormente.");
+		}
+
+		if (service.existsByNombre(ejemploDto.getNombre().toUpperCase())) {
+			return ResponseEntity.status(HttpStatus.IM_USED).body("Ya existe un nombre de ejemplo registrado anteriormente.");
+		}
+
+		Ejemplo ejemplo = new Ejemplo();
+		ejemplo.setCodigo(ejemploDto.getCodigo());
+		ejemplo.setNombre(ejemploDto.getNombre().toUpperCase());
+
+		try {
+			Ejemplo entityDb = service.save(ejemplo);
+			return ResponseEntity.status(HttpStatus.CREATED).body(entityDb);
+		} catch (DataAccessException e) {
+			return ErrorsFuntions.errorMessageSave(e.getMostSpecificCause().getMessage());
+		}
+	}
+
+	@PutMapping("/update/{id}")
+	public ResponseEntity<?> update(@Valid @RequestBody EjemploDto ejemploDto, BindingResult result, @PathVariable Long id) {
+		if (result.hasErrors()) {
+			return this.validates(result);
+		}
+
+		Optional<Ejemplo> objectEjemplo = service.findById(id);
+		if (objectEjemplo.isEmpty()) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontro registro de la información del ejemplo en el sistema.");
+		}
+		if (service.existsByCodigo(ejemploDto.getCodigo())) {
+			Optional<Ejemplo> ejemploCon = service.findByCodigo(ejemploDto.getCodigo());
+			if (!ejemploCon.isEmpty()) {
+				Long idEjemplo = ejemploCon.get().getId();
+				if (!idEjemplo.equals(id)) {
+					return ResponseEntity.status(HttpStatus.IM_USED).body("Ya existe un código de ejemplo registrado anteriormente.");
+				}
+			}
+		}
+		if (service.existsByNombre(ejemploDto.getNombre().toUpperCase())) {
+			Optional<Ejemplo> ejemploCon = service.findByNombre(ejemploDto.getNombre().toUpperCase());
+			if (!ejemploCon.isEmpty()) {
+				Long idEjemplo = ejemploCon.get().getId();
+				if (!idEjemplo.equals(id)) {
+					return ResponseEntity.status(HttpStatus.IM_USED).body("Ya existe un nombre de ejemplo registrado anteriormente.");
+				}
+			}
+		}
+
+		List<Object> newList = isUpdatable(ejemploDto, objectEjemplo);
+		if (newList.isEmpty()) {
+			return ResponseEntity.status(HttpStatus.NOT_MODIFIED).body("No se realizó ningún cambio en la información del ejemplo.");
+		}
+
+		Ejemplo ejemploDb = objectEjemplo.get();
+		ejemploDb.setCodigo(ejemploDto.getCodigo());
+		ejemploDb.setNombre(ejemploDto.getNombre().toUpperCase());
+
+		try {
+			Ejemplo entityDb = service.save(ejemploDb);
+			return ResponseEntity.status(HttpStatus.CREATED).body(entityDb);
+		} catch (DataAccessException e) {
+			return ErrorsFuntions.errorMessageSave(e.getMostSpecificCause().getMessage());
+		} catch (TransactionSystemException e) {
+		    if (e.getRootCause() instanceof ConstraintViolationException) {
+		        ConstraintViolationException cve = (ConstraintViolationException) e.getRootCause();
+		        return ErrorsFuntions.errorConstraint(cve);
+		    }
+		    return null;
+		}
+	}
+
+	private List<Object> isUpdatable(EjemploDto ejemploDto, Optional<Ejemplo> objectEjemplo) {
+		List<Object> newList = new ArrayList<>();
+
+		ArrayList<Object> dto = new ArrayList<>();
+		dto.add(ejemploDto.getCodigo());
+		dto.add(ejemploDto.getNombre().toUpperCase());
+
+		ArrayList<Object> model = new ArrayList<>();
+		if (!objectEjemplo.isEmpty()) {
+			model.add(objectEjemplo.get().getCodigo());
+			model.add(objectEjemplo.get().getNombre().toUpperCase());
+		}
+
+		for (Object element : model) {
+			if (!dto.contains(element)) {
+				newList.add(element);
+			}
+		}
+		return newList;
+	}
+	
+	protected ResponseEntity<?> validates(BindingResult result) {
+		Map<String, Object> errores = new HashMap<>();
+		result.getFieldErrors().forEach(err -> {
+			errores.put(err.getField(), "El campo " + err.getField() + " " + err.getDefaultMessage());
+		});
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errores);
+	}
+
+}

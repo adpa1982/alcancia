@@ -1,0 +1,15 @@
+package com.alcancia.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.alcancia.entity.Alcancia;
+
+public interface IAlcanciaRepository extends JpaRepository<Alcancia, Long> {
+	
+	@Query("SELECT d FROM Departamento d WHERE d.pais.id = :id order by d.nombre")
+	public Iterable<Alcancia> findDepartamentosByPaisByOrderByNombreAsc(@Param("id") Long id);
+
+
+}

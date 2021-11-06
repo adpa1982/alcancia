@@ -1,0 +1,32 @@
+package com.alcancia.utils;
+
+public class ErrorsFuntions {
+	
+	private ErrorsFuntions() {
+	    throw new IllegalStateException("ErrorsFuntions class");
+	}
+	
+	public static ResponseEntity<?> errorMessageSave(String messageError) {
+		Map<String, Object> error = new HashMap<>();
+		String key = "";
+		String value = "";
+		String table = "";
+		List<Integer> parameters = null;
+		if (messageError.contains(CommonControllerConstansts.UNIQUE)) {
+			parameters = List.of(1, 0, 2);
+			key = CommonsFuntions.splitMsgController(messageError, "\\(", parameters);
+			key = StringFunctions.campoTabla(key);
+			parameters = List.of(1, 0, 2);
+			value = CommonsFuntions.splitMsgController(messageError, "=\\(", parameters);
+			parameters = List.of(1, 1, 0);
+			table = CommonsFuntions.splitMsgController(messageError, "«", parameters);
+			parameters = List.of(0, 0, 0);
+			table = CommonsFuntions.splitMsgController(table, "_", parameters);
+		}
+		error.put("key", key);
+		error.put("value", value);
+		error.put("table", StringFunctions.primerletra(table));
+		return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).body(error);
+	}
+
+}

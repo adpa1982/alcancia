@@ -1,0 +1,46 @@
+package com.alcancia;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.alcancia.entity.TipoMoneda;
+import com.alcancia.repository.ITipoMonedaRepository;
+import com.alcancia.service.TipoMonedaService;
+
+@SpringBootTest
+class TipoMonedaServiceTest {
+	
+	@Mock
+	private ITipoMonedaRepository repository;
+	
+	@InjectMocks
+	private TipoMonedaService service;
+	
+	
+	private TipoMoneda tipoMoneda;
+	
+	@BeforeEach
+	void setUp() {
+		MockitoAnnotations.initMocks(this);
+		
+		tipoMoneda = new TipoMoneda();
+		tipoMoneda.setId(new Long (7));
+		
+	}
+	
+
+	@Test
+	void findAllTest() {
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.alcancia;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class ErrorsFuntionsTest {
+
+	@Test
+	void primerletraTest() {
+		fail("Not yet implemented");
+	}
+
+}

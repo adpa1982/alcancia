@@ -1,0 +1,9 @@
+
+<div class="mb-2">
+  <label for="tb-prueba" class="control-label col-form-label">{{ nameInput }}</label>
+  <input type="text" class="form-control" placeholder="Enter prueba" formControlName="prueba">
+</div>
+<ng-container *ngTemplateOutlet=[campoNoValido]>
+  <span class="text-danger">{{ campoErrorMsg }}</span>
+</ng-container>
+<span class="text-danger">{{ errorBackend }}</span>
