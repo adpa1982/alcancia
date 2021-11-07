@@ -17,6 +17,10 @@ const childRoutes: Routes = [
   {
     path: 'alcancia',
     loadChildren: () => import('./alcancia/alcancia.module').then( m => m.AlcanciaModule )
+  },
+  {
+    path: 'minibank',
+    loadChildren: () => import('./minibank/minibank.module').then( m => m.MinibankModule )
   }
 ];
 
