@@ -1,9 +1,16 @@
 # Alcancia
 Crud alcancia
 
-#Local
+Ambiente Local
 1. Descargar el proyecto.
 2. Instalar los paquetes del front.
-3. Ejecutar los script de base de datos en postgresql.
-4. Compilar en SpringToolSuite el proyecto backend_.
-5. Ejecutar el proyecto front con el comando ng serve -o.
+   >npm i
+3. Ejecutar los script de base de datos en postgresql(bd.sql).
+4. Cargar el proyecto backend_ en SpringToolSuite.
+5. Ejecutar el proyecto en SpringTool.
+6. Ejecutar el proyecto front con el comando ng serve -o.
+
+Ambiente Cloud
+1. Acceder a la ruta: http://alcancia-front.s3-website.us-east-2.amazonaws.com/
+
+
