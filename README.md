@@ -10,7 +10,4 @@ Ambiente Local
 5. Ejecutar el proyecto en SpringTool.
 6. Ejecutar el proyecto front con el comando ng serve -o.
 
-Ambiente Cloud
-1. Acceder a la ruta: http://alcancia-front.s3-website.us-east-2.amazonaws.com/
-
 
